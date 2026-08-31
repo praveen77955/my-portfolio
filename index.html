@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seeramreddi Praveen — Creative Developer & CS Student</title>
+  <meta name="description" content="Personal portfolio of Seeramreddi Praveen. Computer Science student, creative developer, and frontend engineer building high-performance digital experiences." />
+  <meta name="theme-color" content="#070709" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Seeramreddi Praveen — Creative Developer" />
+  <meta property="og:description" content="Personal Portfolio — Designer, Developer, Problem Solver." />
+
+  <!-- Google Fonts: Syne (Display), Plus Jakarta Sans (Body), JetBrains Mono (Tech) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom 2-Piece Interactive Cursor (Hidden via CSS, native cursor active) -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true">
+    <span class="cursor-badge" id="cursor-badge">VIEW</span>
+  </div>
+
+  <!-- Background Canvas Visualizer -->
+  <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+  <div class="bg-radial-glow" aria-hidden="true"></div>
+
+  <!-- Sticky Header Navigation -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <a href="#hero" class="logo-link" aria-label="Home">
+        <span class="logo-name">SEERAMREDDI PRAVEEN</span>
+        <span class="logo-tag">DEV</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" id="desktop-nav">
+        <a href="#about" class="nav-link" data-section="about">ABOUT</a>
+        <a href="#skills" class="nav-link" data-section="skills">SKILLS</a>
+        <a href="#featured" class="nav-link" data-section="featured">FEATURED</a>
+        <a href="#projects" class="nav-link" data-section="projects">WORK</a>
+        <a href="#experience" class="nav-link" data-section="experience">TIMELINE</a>
+        <a href="#now" class="nav-link" data-section="now">NOW</a>
+        <a href="#contact" class="nav-link" data-section="contact">CONTACT</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <div class="availability-pill" title="Available for Projects">
+          <span class="pulse-dot"></span>
+          <span class="pill-text">AVAILABLE</span>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide Overlay Navigation -->
+    <div class="mobile-nav-overlay" id="mobile-nav" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <div class="mobile-nav-header">
+          <span class="sys-code">NAVIGATION</span>
+          <button class="mobile-close-btn" id="mobile-close" aria-label="Close menu">✕</button>
+        </div>
+        <nav class="mobile-menu-links">
+          <a href="#about" class="mobile-link">ABOUT</a>
+          <a href="#skills" class="mobile-link">SKILLS</a>
+          <a href="#featured" class="mobile-link">FEATURED WORK</a>
+          <a href="#projects" class="mobile-link">ALL PROJECTS</a>
+          <a href="#experience" class="mobile-link">TIMELINE</a>
+          <a href="#now" class="mobile-link">CURRENTLY</a>
+          <a href="#contact" class="mobile-link">CONTACT</a>
+        </nav>
+        <div class="mobile-nav-footer">
+          <span class="mobile-status">● Available for Roles</span>
+          <span class="mobile-location">Visakhapatnam, IN</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+
+        <div class="hero-grid">
+          <!-- Left Column: Typography & CTAs -->
+          <div class="hero-content">
+            <h1 class="hero-headline reveal">
+              <span class="headline-block">I BUILD</span>
+              <span class="headline-block text-accent">DIGITAL EXPERIENCES.</span>
+            </h1>
+
+            <p class="hero-subhead reveal">
+              <span class="subhead-static">Designer. Developer. Problem solver.</span>
+              <span class="rotating-wrapper">
+                <span class="rotating-label">FOCUS:</span>
+                <span class="rotating-text" id="rotating-text">BUILDING</span>
+              </span>
+            </p>
+
+            <div class="hero-ctas reveal">
+              <a href="#projects" class="btn btn-primary">
+                <span>VIEW MY WORK</span>
+                <span class="btn-icon">↘</span>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <span>LET'S TALK</span>
+                <span class="btn-icon">→</span>
+              </a>
+              <a href="assets/Praveen_Resume.pdf" download target="_blank" rel="noopener" class="btn btn-subtle">
+                <span>DOWNLOAD RESUME</span>
+                <span class="btn-icon">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Card -->
+          <div class="hero-hud-wrapper reveal">
+            <div class="command-center-card" id="hud-card">
+              <div class="hud-header">
+                <div class="hud-title-group">
+                  <span class="hud-title">CURRENT STATUS</span>
+                </div>
+                <div class="hud-live-badge">
+                  <span class="hud-pulse"></span>
+                  <span class="hud-live-text">ONLINE</span>
+                </div>
+              </div>
+
+              <!-- HUD Canvas Visualizer -->
+              <div class="hud-canvas-container">
+                <canvas id="hud-canvas" width="400" height="120"></canvas>
+                <div class="hud-scanline"></div>
+              </div>
+
+              <!-- HUD Metrics Data Board -->
+              <div class="hud-metrics">
+                <div class="hud-metric-row">
+                  <span class="metric-key">CURRENTLY BUILDING</span>
+                  <span class="metric-val text-purple" id="hud-building">Aura Editorial Platform</span>
+                </div>
+                <div class="hud-metric-row">
+                  <span class="metric-key">CURRENT FOCUS</span>
+                  <span class="metric-val" id="hud-focus">Frontend Architecture & UX</span>
+                </div>
+                <div class="hud-metric-row">
+                  <span class="metric-key">SELECTED TECH</span>
+                  <span class="metric-val text-dim" id="hud-tech">React • Next.js • TS • Python</span>
+                </div>
+                <div class="hud-metric-row">
+                  <span class="metric-key">LOCATION & TIME</span>
+                  <span class="metric-val" id="hud-clock">Visakhapatnam, IN --:--:--</span>
+                </div>
+                <div class="hud-metric-row">
+                  <span class="metric-key">LATEST PROJECT</span>
+                  <a href="#projects" class="metric-val metric-link">Vortex Audio Visualizer ↗</a>
+                </div>
+              </div>
+
+              <!-- HUD Footer Indicator -->
+              <div class="hud-footer">
+                <span class="hud-coordinates" id="hud-coordinates">Visakhapatnam, India</span>
+                <span class="hud-status">Available for Roles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MARQUEE STRIP -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>CREATIVE DEVELOPMENT</span> <span class="marquee-dot">•</span>
+          <span>SYSTEM ARCHITECTURE</span> <span class="marquee-dot">•</span>
+          <span>FRONTEND ENGINEERING</span> <span class="marquee-dot">•</span>
+          <span>UI INTERACTION DESIGN</span> <span class="marquee-dot">•</span>
+          <span>COMPUTER SCIENCE</span> <span class="marquee-dot">•</span>
+        </div>
+        <div class="marquee-content">
+          <span>CREATIVE DEVELOPMENT</span> <span class="marquee-dot">•</span>
+          <span>SYSTEM ARCHITECTURE</span> <span class="marquee-dot">•</span>
+          <span>FRONTEND ENGINEERING</span> <span class="marquee-dot">•</span>
+          <span>UI INTERACTION DESIGN</span> <span class="marquee-dot">•</span>
+          <span>COMPUTER SCIENCE</span> <span class="marquee-dot">•</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-tag reveal">ABOUT</div>
+        
+        <div class="about-grid">
+          <!-- Left Column: Large Editorial Statement -->
+          <div class="about-left reveal">
+            <h2 class="about-statement" id="about-statement">
+              I LIKE TURNING COMPLEX IDEAS INTO SIMPLE EXPERIENCES.
+            </h2>
+          </div>
+
+          <!-- Right Column: Bio & Metadata -->
+          <div class="about-right reveal">
+            <div class="about-bio">
+              <p class="lead-paragraph" id="about-bio1">
+                I am Seeramreddi Praveen, a Computer Science student driven by clean code, intuitive interfaces, and high-performance digital experiences.
+              </p>
+              <p class="body-paragraph" id="about-bio2">
+                I specialize in frontend engineering, interactive web applications, and modern software design. My approach combines technical precision with intentional typography, dark visual systems, and motion.
+              </p>
+            </div>
+
+            <!-- Technical Metadata Grid -->
+            <div class="metadata-grid" id="about-metadata">
+              <!-- Dynamically populated from data.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag">CAPABILITIES</div>
+          <h2 class="section-headline">TECHNICAL MATRIX</h2>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="skills-filter reveal" id="skills-filter">
+          <button class="filter-btn active" data-category="ALL">ALL</button>
+          <button class="filter-btn" data-category="DEVELOPMENT">DEVELOPMENT</button>
+          <button class="filter-btn" data-category="DESIGN">DESIGN</button>
+          <button class="filter-btn" data-category="TECHNOLOGY">TECHNOLOGY</button>
+        </div>
+
+        <!-- Dynamic Skills Grid -->
+        <div class="skills-container reveal" id="skills-grid">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECT SECTION -->
+    <section class="section featured-section" id="featured">
+      <div class="container">
+        <div class="section-tag reveal">FEATURED WORK</div>
+
+        <div class="featured-card reveal" id="featured-card">
+          <div class="featured-badge">FEATURED WORK</div>
+
+          <div class="featured-grid">
+            <!-- Left: Interactive Visual Card -->
+            <div class="featured-visual-wrapper">
+              <div class="featured-visual-box" id="featured-visual-box">
+                <div class="visual-grid-bg"></div>
+                <div class="visual-tech-specs">
+                  <span class="spec-label">AURA PLATFORM</span>
+                  <span class="spec-label">ZERO LAYOUT SHIFT</span>
+                </div>
+                <div class="visual-content">
+                  <div class="visual-mockup-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="url-bar">aura.editorial.platform</span>
+                  </div>
+                  <div class="visual-preview-graphic">
+                    <div class="graphic-line text-lg font-bold">AURA EDITORIAL</div>
+                    <div class="graphic-line text-sm text-dim">NEXT.JS • TYPESCRIPT • TAILWIND</div>
+                    <div class="graphic-bars">
+                      <span class="bar b1"></span>
+                      <span class="bar b2"></span>
+                      <span class="bar b3"></span>
+                      <span class="bar b4"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Project Details -->
+            <div class="featured-info">
+              <span class="featured-category" id="featured-category">Next.js / TypeScript / Web</span>
+              <h3 class="featured-title" id="featured-title">AURA EDITORIAL PLATFORM</h3>
+              <p class="featured-desc" id="featured-desc">
+                High-performance digital publication platform with dynamic typography scaling and zero layout shift.
+              </p>
+
+              <!-- Metrics Summary Grid -->
+              <div class="featured-metrics" id="featured-metrics">
+                <div class="metric-box">
+                  <span class="metric-number">99/100</span>
+                  <span class="metric-name">LIGHTHOUSE SCORE</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-number">0.00</span>
+                  <span class="metric-name">LAYOUT SHIFT (CLS)</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-number">&lt;100ms</span>
+                  <span class="metric-name">PAGE TRANSITION</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Tags -->
+              <div class="featured-tech-tags" id="featured-tech">
+                <!-- Populated dynamically -->
+              </div>
+
+              <!-- Action CTAs -->
+              <div class="featured-actions">
+                <button class="btn btn-primary open-case-study-btn" data-project-id="aura-editorial">
+                  <span>VIEW CASE STUDY</span>
+                  <span class="btn-icon">↗</span>
+                </button>
+                <a href="https://github.com/seeramreddipraveen" target="_blank" rel="noopener" class="btn btn-secondary">
+                  <span>SOURCE CODE</span>
+                  <span class="btn-icon">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS MAIN SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="projects-header reveal">
+          <div class="section-tag">SELECTED WORKS</div>
+          <h2 class="section-headline">EDITORIAL SHOWCASE</h2>
+        </div>
+
+        <!-- Editorial Horizontal Project Showcase List -->
+        <div class="projects-list reveal" id="projects-list">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE / TIMELINE SECTION -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag">TIMELINE</div>
+          <h2 class="section-headline">EXPERIENCE & EDUCATION</h2>
+        </div>
+
+        <div class="timeline-wrapper reveal" id="timeline-container">
+          <div class="timeline-line"></div>
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONAL "NOW" SECTION -->
+    <section class="section now-section" id="now">
+      <div class="container">
+        <div class="section-tag">STATUS</div>
+        <h2 class="section-headline reveal">CURRENTLY</h2>
+
+        <div class="now-board reveal" id="now-board">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-tag reveal">CONTACT</div>
+
+        <div class="contact-grid">
+          <!-- Left Column -->
+          <div class="contact-info reveal">
+            <h2 class="contact-headline">HAVE AN IDEA?</h2>
+            <p class="contact-subhead">
+              LET'S BUILD SOMETHING WORTH REMEMBERING.
+            </p>
+
+            <div class="contact-methods">
+              <div class="method-item">
+                <span class="method-label">DIRECT EMAIL</span>
+                <a href="mailto:seeramreddipraveen@gmail.com" class="method-value hover-accent" id="contact-email">seeramreddipraveen@gmail.com</a>
+              </div>
+              <div class="method-item">
+                <span class="method-label">LOCATION</span>
+                <span class="method-value" id="contact-location">Visakhapatnam, India</span>
+              </div>
+              <div class="method-item">
+                <span class="method-label">TIME ZONE</span>
+                <span class="method-value">IST (UTC+05:30)</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-socials">
+              <span class="socials-label">CONNECT:</span>
+              <div class="social-links-list">
+                <a href="https://github.com/seeramreddipraveen" target="_blank" rel="noopener" class="social-link">GITHUB</a>
+                <a href="https://linkedin.com/in/seeramreddipraveen" target="_blank" rel="noopener" class="social-link">LINKEDIN</a>
+                <a href="https://x.com" target="_blank" rel="noopener" class="social-link">X / TWITTER</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Form -->
+          <div class="contact-form-container reveal">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-header">
+                <span class="form-sys-tag">SEND A MESSAGE</span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-name" class="form-label">YOUR NAME *</label>
+                <input type="text" id="form-name" name="name" required placeholder="e.g. Alex Morgan" class="form-input" autocomplete="name" />
+                <span class="form-error" id="name-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">YOUR EMAIL *</label>
+                <input type="email" id="form-email" name="email" required placeholder="alex@company.com" class="form-input" autocomplete="email" />
+                <span class="form-error" id="email-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">MESSAGE *</label>
+                <textarea id="form-message" name="message" rows="5" required placeholder="Tell me about your project, idea, or role..." class="form-input form-textarea"></textarea>
+                <span class="form-error" id="message-error"></span>
+              </div>
+
+              <!-- Form Response Banner -->
+              <div class="form-feedback" id="form-feedback" aria-live="polite"></div>
+
+              <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                <span class="btn-text">SEND MESSAGE</span>
+                <span class="btn-icon">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-big-text">LET'S MAKE SOMETHING GREAT.</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-col">
+          <span class="footer-name">SEERAMREDDI PRAVEEN</span>
+          <span class="footer-copy">© 2026. ALL RIGHTS RESERVED.</span>
+        </div>
+
+        <div class="footer-col footer-nav">
+          <a href="#about" class="footer-link">ABOUT</a>
+          <a href="#projects" class="footer-link">WORK</a>
+          <a href="#skills" class="footer-link">SKILLS</a>
+          <a href="#contact" class="footer-link">CONTACT</a>
+        </div>
+
+        <div class="footer-col footer-sys">
+          <div class="sys-status-pill">
+            <span class="pulse-dot"></span>
+            <span>AVAILABLE FOR ROLES</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT CASE STUDY MODAL -->
+  <div class="modal-overlay" id="case-study-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-num" id="modal-num">01</span>
+          <h2 class="modal-title" id="modal-title">PROJECT TITLE</h2>
+        </div>
+        <button class="modal-close-btn" id="modal-close" aria-label="Close project modal">✕ ESC</button>
+      </div>
+
+      <div class="modal-body" id="modal-body">
+        <!-- Dynamically rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
