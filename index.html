@@ -53,6 +53,11 @@
 
       <!-- Right Header Actions -->
       <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light theme">
+          <span class="theme-toggle-icon" id="theme-icon">☀</span>
+          <span class="theme-toggle-text" id="theme-text">LIGHT</span>
+        </button>
+
         <div class="availability-pill" title="Available for Projects">
           <span class="pulse-dot"></span>
           <span class="pill-text">AVAILABLE</span>
@@ -71,7 +76,13 @@
       <div class="mobile-nav-inner">
         <div class="mobile-nav-header">
           <span class="sys-code">NAVIGATION</span>
-          <button class="mobile-close-btn" id="mobile-close" aria-label="Close menu">✕</button>
+          <div class="mobile-nav-actions">
+            <button class="theme-toggle mobile-theme-toggle" id="mobile-theme-toggle" aria-label="Toggle Dark/Light theme">
+              <span id="mobile-theme-icon">☀</span>
+              <span id="mobile-theme-text">LIGHT</span>
+            </button>
+            <button class="mobile-close-btn" id="mobile-close" aria-label="Close menu">✕</button>
+          </div>
         </div>
         <nav class="mobile-menu-links">
           <a href="#about" class="mobile-link">ABOUT</a>

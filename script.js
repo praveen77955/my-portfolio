@@ -307,6 +307,48 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
 
   /* --------------------------------------------------------------------------
+     THEME TOGGLE ENGINE (DARK <-> LIGHT)
+     -------------------------------------------------------------------------- */
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const themeText = document.getElementById('theme-text');
+
+  const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+  const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+  const mobileThemeText = document.getElementById('mobile-theme-text');
+
+  const htmlEl = document.documentElement;
+
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  setTheme(savedTheme);
+
+  function toggleTheme() {
+    const currentTheme = htmlEl.getAttribute('data-theme') || 'dark';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  }
+
+  if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+  if (mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+
+  function setTheme(theme) {
+    htmlEl.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+
+    if (theme === 'light') {
+      if (themeIcon) themeIcon.textContent = '☾';
+      if (themeText) themeText.textContent = 'DARK';
+      if (mobileThemeIcon) mobileThemeIcon.textContent = '☾';
+      if (mobileThemeText) mobileThemeText.textContent = 'DARK';
+    } else {
+      if (themeIcon) themeIcon.textContent = '☀';
+      if (themeText) themeText.textContent = 'LIGHT';
+      if (mobileThemeIcon) mobileThemeIcon.textContent = '☀';
+      if (mobileThemeText) mobileThemeText.textContent = 'LIGHT';
+    }
+  }
+
+  /* --------------------------------------------------------------------------
      09. SKILLS RENDERING & FILTERING
      -------------------------------------------------------------------------- */
   function renderSkills(skillsData) {
