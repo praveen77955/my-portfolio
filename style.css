@@ -770,7 +770,44 @@ body.cursor-view-mode .cursor-badge {
   transform: translateX(4px);
 }
 
-/* COMMAND CENTER HUD CARD */
+/* HERO LEFT COLUMN META BAR */
+.hero-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.meta-val {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.hero-meta-divider {
+  width: 1px;
+  height: 22px;
+  background-color: var(--border-subtle);
+}
+
+/* COMMAND CENTER HUD & DEVELOPER PROFILE CARD */
 .command-center-card {
   background-color: var(--surface-dark);
   border: 1px solid var(--border-medium);
@@ -779,12 +816,124 @@ body.cursor-view-mode .cursor-badge {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .command-center-card:hover {
   border-color: var(--border-active);
-  box-shadow: 0 25px 60px rgba(168, 85, 247, 0.15);
+  box-shadow: 0 25px 60px rgba(192, 88, 0, 0.25);
+}
+
+/* HERO PORTRAIT PHOTO CONTAINER & FRAME */
+.hero-photo-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-medium);
+  overflow: hidden;
+  background-color: var(--surface-card);
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 13;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(192, 88, 0, 0.12), transparent 70%);
+}
+
+.hero-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: contrast(1.05) brightness(0.96);
+  transition: transform 0.6s var(--ease-out-expo), filter 0.6s ease;
+}
+
+.command-center-card:hover .hero-photo-img {
+  transform: scale(1.04);
+  filter: contrast(1.08) brightness(1.02);
+}
+
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(41, 24, 7, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Tech Corner Brackets */
+.corner-bracket {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--accent-purple);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.85;
+}
+
+.corner-bracket.top-left {
+  top: 8px;
+  left: 8px;
+  border-width: 2px 0 0 2px;
+}
+
+.corner-bracket.top-right {
+  top: 8px;
+  right: 8px;
+  border-width: 2px 2px 0 0;
+}
+
+.corner-bracket.bottom-left {
+  bottom: 8px;
+  left: 8px;
+  border-width: 0 0 2px 2px;
+}
+
+.corner-bracket.bottom-right {
+  bottom: 8px;
+  right: 8px;
+  border-width: 0 2px 2px 0;
+}
+
+/* Photo Overlay Badge */
+.hero-photo-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  background: rgba(41, 24, 7, 0.85);
+  border: 1px solid var(--border-medium);
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.photo-badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-purple);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--accent-purple);
+}
+
+.photo-badge-name {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
 }
 
 .hud-header {
@@ -2098,8 +2247,20 @@ body.cursor-view-mode .cursor-badge {
     padding: 1.1rem;
   }
 
+  .hero-meta-bar {
+    gap: 0.75rem;
+  }
+
+  .hero-meta-divider {
+    display: none;
+  }
+
+  .hero-photo-frame {
+    aspect-ratio: 4 / 3;
+  }
+
   .hud-canvas-container {
-    height: 90px;
+    height: 80px;
   }
 
   .hud-metrics {

@@ -109,6 +109,11 @@
         <div class="hero-grid">
           <!-- Left Column: Typography & CTAs -->
           <div class="hero-content">
+            <div class="status-badge reveal">
+              <span class="pulse-dot"></span>
+              <span class="badge-text">AVAILABLE FOR ROLES &amp; PROJECTS</span>
+            </div>
+
             <h1 class="hero-headline reveal">
               <span class="headline-block">I BUILD</span>
               <span class="headline-block text-accent">DIGITAL EXPERIENCES.</span>
@@ -136,14 +141,35 @@
                 <span class="btn-icon">↓</span>
               </a>
             </div>
+
+            <!-- Hero Quick Meta Details -->
+            <div class="hero-meta-bar reveal">
+              <div class="hero-meta-item">
+                <span class="meta-label">DEVELOPER</span>
+                <span class="meta-val">Seeramreddi Praveen</span>
+              </div>
+              <div class="hero-meta-divider"></div>
+              <div class="hero-meta-item">
+                <span class="meta-label">ROLE</span>
+                <span class="meta-val">CS Student &amp; Creative Dev</span>
+              </div>
+              <div class="hero-meta-divider"></div>
+              <div class="hero-meta-item">
+                <span class="meta-label">LOCATION</span>
+                <span class="meta-val">Visakhapatnam, IN</span>
+              </div>
+            </div>
           </div>
 
-          <!-- Right Column: Interactive Card -->
+          <!-- Right Column: Interactive Profile & Command Center Card with Photo -->
           <div class="hero-hud-wrapper reveal">
-            <div class="command-center-card" id="hud-card">
+            <div class="command-center-card hero-profile-card" id="hud-card">
+              <!-- HUD Top Header -->
               <div class="hud-header">
                 <div class="hud-title-group">
-                  <span class="hud-title">CURRENT STATUS</span>
+                  <span class="hud-terminal-icon">⚡</span>
+                  <span class="hud-title">DEVELOPER PROFILE</span>
+                  <span class="hud-version">SYS.v2.0</span>
                 </div>
                 <div class="hud-live-badge">
                   <span class="hud-pulse"></span>
@@ -151,9 +177,27 @@
                 </div>
               </div>
 
-              <!-- HUD Canvas Visualizer -->
+              <!-- Hero Photo Frame -->
+              <div class="hero-photo-wrapper">
+                <div class="hero-photo-frame">
+                  <img src="praveen_portrait.jpg" alt="Seeramreddi Praveen - Creative Developer" class="hero-photo-img" loading="eager" />
+                  <div class="hero-photo-overlay"></div>
+                  <!-- Tech Bracket Corner Accents -->
+                  <span class="corner-bracket top-left"></span>
+                  <span class="corner-bracket top-right"></span>
+                  <span class="corner-bracket bottom-left"></span>
+                  <span class="corner-bracket bottom-right"></span>
+                  <!-- Floating Badge overlay on photo -->
+                  <div class="hero-photo-badge">
+                    <span class="photo-badge-dot"></span>
+                    <span class="photo-badge-name">SEERAMREDDI PRAVEEN</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- HUD Audio Visualizer Canvas -->
               <div class="hud-canvas-container">
-                <canvas id="hud-canvas" width="400" height="120"></canvas>
+                <canvas id="hud-canvas" width="400" height="90"></canvas>
                 <div class="hud-scanline"></div>
               </div>
 
@@ -165,19 +209,15 @@
                 </div>
                 <div class="hud-metric-row">
                   <span class="metric-key">CURRENT FOCUS</span>
-                  <span class="metric-val" id="hud-focus">Frontend Architecture & UX</span>
+                  <span class="metric-val" id="hud-focus">Frontend Architecture &amp; UX</span>
                 </div>
                 <div class="hud-metric-row">
                   <span class="metric-key">SELECTED TECH</span>
                   <span class="metric-val text-dim" id="hud-tech">React • Next.js • TS • Python</span>
                 </div>
                 <div class="hud-metric-row">
-                  <span class="metric-key">LOCATION & TIME</span>
+                  <span class="metric-key">LOCATION &amp; TIME</span>
                   <span class="metric-val" id="hud-clock">Visakhapatnam, IN --:--:--</span>
-                </div>
-                <div class="hud-metric-row">
-                  <span class="metric-key">LATEST PROJECT</span>
-                  <a href="#projects" class="metric-val metric-link">Vortex Audio Visualizer ↗</a>
                 </div>
               </div>
 
