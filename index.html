@@ -107,8 +107,13 @@
       <div class="hero-container">
 
         <div class="hero-grid">
-          <!-- Left Column: Typography & CTAs -->
+          <!-- Left Column: Typography, Photo & CTAs -->
           <div class="hero-content">
+            <!-- Developer Portrait Photo on Left Side -->
+            <div class="hero-portrait-container reveal">
+              <img src="praveen_portrait.jpg" alt="Seeramreddi Praveen - Creative Developer" class="hero-portrait-img" loading="eager" />
+            </div>
+
             <div class="status-badge reveal">
               <span class="pulse-dot"></span>
               <span class="badge-text">AVAILABLE FOR ROLES &amp; PROJECTS</span>
@@ -161,14 +166,14 @@
             </div>
           </div>
 
-          <!-- Right Column: Interactive Profile & Command Center Card with Photo -->
+          <!-- Right Column: Interactive Command Center HUD Card -->
           <div class="hero-hud-wrapper reveal">
-            <div class="command-center-card hero-profile-card" id="hud-card">
+            <div class="command-center-card" id="hud-card">
               <!-- HUD Top Header -->
               <div class="hud-header">
                 <div class="hud-title-group">
                   <span class="hud-terminal-icon">⚡</span>
-                  <span class="hud-title">DEVELOPER PROFILE</span>
+                  <span class="hud-title">COMMAND CENTER</span>
                   <span class="hud-version">SYS.v2.0</span>
                 </div>
                 <div class="hud-live-badge">
@@ -177,14 +182,9 @@
                 </div>
               </div>
 
-              <!-- Hero Photo -->
-              <div class="hero-photo-wrapper">
-                <img src="praveen_portrait.jpg" alt="Seeramreddi Praveen - Creative Developer" class="hero-photo-img" loading="eager" />
-              </div>
-
               <!-- HUD Audio Visualizer Canvas -->
               <div class="hud-canvas-container">
-                <canvas id="hud-canvas" width="400" height="90"></canvas>
+                <canvas id="hud-canvas" width="400" height="120"></canvas>
                 <div class="hud-scanline"></div>
               </div>
 
@@ -205,6 +205,10 @@
                 <div class="hud-metric-row">
                   <span class="metric-key">LOCATION &amp; TIME</span>
                   <span class="metric-val" id="hud-clock">Visakhapatnam, IN --:--:--</span>
+                </div>
+                <div class="hud-metric-row">
+                  <span class="metric-key">LATEST PROJECT</span>
+                  <a href="#projects" class="metric-val metric-link">Vortex Audio Visualizer ↗</a>
                 </div>
               </div>
 
