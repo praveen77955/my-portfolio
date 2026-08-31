@@ -628,15 +628,15 @@ body.cursor-view-mode .cursor-badge {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: center;
   width: 100%;
 }
 
 .hero-hud-wrapper {
   width: 100%;
-  max-width: 460px;
+  max-width: 540px;
   margin-left: auto;
   position: relative;
 }
@@ -838,7 +838,7 @@ body.cursor-view-mode .cursor-badge {
 .hero-photo-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 13;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -2256,7 +2256,7 @@ body.cursor-view-mode .cursor-badge {
   }
 
   .hero-photo-frame {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
 
   .hud-canvas-container {
