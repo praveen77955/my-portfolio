@@ -14,7 +14,6 @@ const PORTFOLIO_DATA = {
     location: "Visakhapatnam, India",
     timeZone: "Asia/Kolkata",
     resumeUrl: "assets/Praveen_Resume.pdf",
-    avatar: "praveen_portrait.jpg",
     descriptors: ["BUILDING", "DESIGNING", "EXPERIMENTING", "CREATING"],
   },
 

@@ -824,40 +824,6 @@ body.cursor-view-mode .cursor-badge {
   box-shadow: 0 25px 60px rgba(192, 88, 0, 0.25);
 }
 
-/* HERO LEFT PORTRAIT PHOTO */
-.hero-portrait-container {
-  width: 100%;
-  max-width: 260px;
-  margin-bottom: 2rem;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border-medium);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
-  background-color: var(--surface-dark);
-  transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease, box-shadow 0.4s ease;
-}
-
-.hero-portrait-container:hover {
-  border-color: var(--border-active);
-  box-shadow: 0 20px 45px rgba(192, 88, 0, 0.3);
-  transform: translateY(-3px);
-}
-
-.hero-portrait-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1.05;
-  display: block;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 12px;
-  transition: transform 0.6s var(--ease-out-expo);
-}
-
-.hero-portrait-container:hover .hero-portrait-img {
-  transform: scale(1.03);
-}
-
 .hud-header {
   display: flex;
   justify-content: space-between;
